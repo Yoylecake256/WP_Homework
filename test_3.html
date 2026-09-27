@@ -4,79 +4,189 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Registration Form</title>
-</head>
-<body style="font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 20px;">
+    <style>
+        /* Base Page Styles */
+        * {
+            box-sizing: border-box;
+        }
 
-    <div style="width: 100%; max-width: 480px; margin: 20px auto; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 25px 30px; box-sizing: border-box;">
-        
-        <h2 style="text-align: center; color: #0f1361; margin-top: 0; margin-bottom: 25px; font-size: 22px;">Student Registration Form</h2>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Form Card Container */
+        .form-card {
+            width: 100%;
+            max-width: 480px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 25px 30px;
+        }
+
+        .form-title {
+            text-align: center;
+            color: #0f1361;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 22px;
+        }
+
+        /* Form Group and Labels */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 6px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        /* Input Controls */
+        .form-control {
+            width: 100%;
+            padding: 9px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: #ffffff;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        /* Pure CSS Focus Effect (Soft Yellow Background) */
+        .form-control:focus {
+            outline: none;
+            background-color: #ffffcc;
+            border-color: #0f1361;
+        }
+
+        /* Specific Input Tweaks */
+        textarea.form-control {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .color-picker {
+            height: 38px;
+            padding: 2px;
+            cursor: pointer;
+        }
+
+        /* Checkbox & Radio Option Grouping */
+        .option-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .option-label {
+            font-weight: normal;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Buttons */
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-submit {
+            background-color: #388e3c;
+            color: #ffffff;
+        }
+
+        .btn-submit:hover {
+            background-color: #2e7d32;
+        }
+
+        .btn-reset {
+            background-color: #d9381e;
+            color: #ffffff;
+        }
+
+        .btn-reset:hover {
+            background-color: #c02d15;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="form-card">
+        <h2 class="form-title">Student Registration Form</h2>
         
         <form action="#" method="POST">
             <!-- Full Name -->
-            <div style="margin-bottom: 18px;">
-                <label for="fullName" style="font-weight: bold; display: block; margin-bottom: 6px; color: #333; font-size: 14px;">Full Name</label>
-                <input type="text" id="fullName" placeholder="Enter Full Name" required 
-                       onfocus="this.style.backgroundColor='#ffffcc';" 
-                       onblur="this.style.backgroundColor='#ffffff';" 
-                       style="width: 100%; padding: 9px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; box-sizing: border-box; background-color: #ffffff;">
+            <div class="form-group">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" id="fullName" class="form-control" placeholder="Enter Full Name" required>
             </div>
 
             <!-- Email -->
-            <div style="margin-bottom: 18px;">
-                <label for="email" style="font-weight: bold; display: block; margin-bottom: 6px; color: #333; font-size: 14px;">Email</label>
-                <input type="email" id="email" placeholder="Enter Email" required 
-                       onfocus="this.style.backgroundColor='#ffffcc';" 
-                       onblur="this.style.backgroundColor='#ffffff';" 
-                       style="width: 100%; padding: 9px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; box-sizing: border-box; background-color: #ffffff;">
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-control" placeholder="Enter Email" required>
             </div>
 
             <!-- Password -->
-            <div style="margin-bottom: 18px;">
-                <label for="password" style="font-weight: bold; display: block; margin-bottom: 6px; color: #333; font-size: 14px;">Password</label>
-                <input type="password" id="password" placeholder="Enter Password" required 
-                       onfocus="this.style.backgroundColor='#ffffcc';" 
-                       onblur="this.style.backgroundColor='#ffffff';" 
-                       style="width: 100%; padding: 9px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; box-sizing: border-box; background-color: #ffffff;">
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-control" placeholder="Enter Password" required>
             </div>
 
             <!-- Date of Birth -->
-            <div style="margin-bottom: 18px;">
-                <label for="dob" style="font-weight: bold; display: block; margin-bottom: 6px; color: #333; font-size: 14px;">Date of Birth</label>
-                <input type="date" id="dob" 
-                       onfocus="this.style.backgroundColor='#ffffcc';" 
-                       onblur="this.style.backgroundColor='#ffffff';" 
-                       style="width: 100%; padding: 9px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; box-sizing: border-box; background-color: #ffffff;">
+            <div class="form-group">
+                <label for="dob" class="form-label">Date of Birth</label>
+                <input type="date" id="dob" class="form-control">
             </div>
 
             <!-- Age -->
-            <div style="margin-bottom: 18px;">
-                <label for="age" style="font-weight: bold; display: block; margin-bottom: 6px; color: #333; font-size: 14px;">Age</label>
-                <input type="number" id="age" placeholder="Enter Age" min="1" max="120" 
-                       onfocus="this.style.backgroundColor='#ffffcc';" 
-                       onblur="this.style.backgroundColor='#ffffff';" 
-                       style="width: 100%; padding: 9px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; box-sizing: border-box; background-color: #ffffff;">
+            <div class="form-group">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" id="age" class="form-control" placeholder="Enter Age" min="1" max="120">
             </div>
 
             <!-- Gender -->
-            <div style="margin-bottom: 18px;">
-                <label style="font-weight: bold; display: block; margin-bottom: 6px; color: #333; font-size: 14px;">Gender</label>
-                <div style="display: flex; gap: 15px; align-items: center;">
-                    <label style="font-weight: normal; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 5px;">
+            <div class="form-group">
+                <label class="form-label">Gender</label>
+                <div class="option-group">
+                    <label class="option-label">
                         <input type="radio" name="gender" value="male"> Male
                     </label>
-                    <label style="font-weight: normal; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 5px;">
+                    <label class="option-label">
                         <input type="radio" name="gender" value="female"> Female
                     </label>
                 </div>
             </div>
 
             <!-- Course -->
-            <div style="margin-bottom: 18px;">
-                <label for="course" style="font-weight: bold; display: block; margin-bottom: 6px; color: #333; font-size: 14px;">Course</label>
-                <select id="course" 
-                        onfocus="this.style.backgroundColor='#ffffcc';" 
-                        onblur="this.style.backgroundColor='#ffffff';" 
-                        style="width: 100%; padding: 9px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; box-sizing: border-box; background-color: #ffffff;">
+            <div class="form-group">
+                <label for="course" class="form-label">Course</label>
+                <select id="course" class="form-control">
                     <option value="">Select Course</option>
                     <option value="cs">Computer Science</option>
                     <option value="it">Information Technology</option>
@@ -84,65 +194,53 @@
             </div>
 
             <!-- Subjects -->
-            <div style="margin-bottom: 18px;">
-                <label style="font-weight: bold; display: block; margin-bottom: 6px; color: #333; font-size: 14px;">Subjects</label>
-                <div style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
-                    <label style="font-weight: normal; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 5px;"><input type="checkbox" name="subject" value="html"> HTML</label>
-                    <label style="font-weight: normal; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 5px;"><input type="checkbox" name="subject" value="css"> CSS</label>
-                    <label style="font-weight: normal; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 5px;"><input type="checkbox" name="subject" value="js"> JavaScript</label>
-                    <label style="font-weight: normal; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 5px;"><input type="checkbox" name="subject" value="php"> PHP</label>
+            <div class="form-group">
+                <label class="form-label">Subjects</label>
+                <div class="option-group">
+                    <label class="option-label"><input type="checkbox" name="subject" value="html"> HTML</label>
+                    <label class="option-label"><input type="checkbox" name="subject" value="css"> CSS</label>
+                    <label class="option-label"><input type="checkbox" name="subject" value="js"> JavaScript</label>
+                    <label class="option-label"><input type="checkbox" name="subject" value="php"> PHP</label>
                 </div>
             </div>
 
             <!-- Profile Photo -->
-            <div style="margin-bottom: 18px;">
-                <label for="profilePhoto" style="font-weight: bold; display: block; margin-bottom: 6px; color: #333; font-size: 14px;">Profile Photo</label>
-                <input type="file" id="profilePhoto" 
-                       onfocus="this.style.backgroundColor='#ffffcc';" 
-                       onblur="this.style.backgroundColor='#ffffff';" 
-                       style="width: 100%; padding: 6px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; box-sizing: border-box; background-color: #ffffff;">
+            <div class="form-group">
+                <label for="profilePhoto" class="form-label">Profile Photo</label>
+                <input type="file" id="profilePhoto" class="form-control">
             </div>
 
             <!-- Favourite Color -->
-            <div style="margin-bottom: 18px;">
-                <label for="favColor" style="font-weight: bold; display: block; margin-bottom: 6px; color: #333; font-size: 14px;">Favourite Color</label>
-                <input type="color" id="favColor" value="#0f1361" style="width: 100%; height: 38px; border: 1px solid #ccc; border-radius: 4px; padding: 2px; box-sizing: border-box; cursor: pointer;">
+            <div class="form-group">
+                <label for="favColor" class="form-label">Favourite Color</label>
+                <input type="color" id="favColor" class="form-control color-picker" value="#0f1361">
             </div>
 
             <!-- Website -->
-            <div style="margin-bottom: 18px;">
-                <label for="website" style="font-weight: bold; display: block; margin-bottom: 6px; color: #333; font-size: 14px;">Website</label>
-                <input type="url" id="website" placeholder="https://example.com" 
-                       onfocus="this.style.backgroundColor='#ffffcc';" 
-                       onblur="this.style.backgroundColor='#ffffff';" 
-                       style="width: 100%; padding: 9px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; box-sizing: border-box; background-color: #ffffff;">
+            <div class="form-group">
+                <label for="website" class="form-label">Website</label>
+                <input type="url" id="website" class="form-control" placeholder="https://example.com">
             </div>
 
             <!-- Search -->
-            <div style="margin-bottom: 18px;">
-                <label for="search" style="font-weight: bold; display: block; margin-bottom: 6px; color: #333; font-size: 14px;">Search</label>
-                <input type="search" id="search" placeholder="Search..." 
-                       onfocus="this.style.backgroundColor='#ffffcc';" 
-                       onblur="this.style.backgroundColor='#ffffff';" 
-                       style="width: 100%; padding: 9px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; box-sizing: border-box; background-color: #ffffff;">
+            <div class="form-group">
+                <label for="search" class="form-label">Search</label>
+                <input type="search" id="search" class="form-control" placeholder="Search...">
             </div>
 
             <!-- Feedback -->
-            <div style="margin-bottom: 18px;">
-                <label for="feedback" style="font-weight: bold; display: block; margin-bottom: 6px; color: #333; font-size: 14px;">Feedback</label>
-                <textarea id="feedback" rows="4" placeholder="Enter your feedback" 
-                          onfocus="this.style.backgroundColor='#ffffcc';" 
-                          onblur="this.style.backgroundColor='#ffffff';" 
-                          style="width: 100%; padding: 9px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; box-sizing: border-box; resize: vertical; min-height: 90px; background-color: #ffffff;"></textarea>
+            <div class="form-group">
+                <label for="feedback" class="form-label">Feedback</label>
+                <textarea id="feedback" class="form-control" rows="4" placeholder="Enter your feedback"></textarea>
             </div>
 
-            <!-- Submit Button -->
-            <button type="submit" style="width: 100%; background-color: #388e3c; color: white; border: none; padding: 10px; font-size: 15px; font-weight: bold; border-radius: 4px; cursor: pointer; margin-bottom: 10px;">Submit</button>
-
-            <!-- Reset Button -->
-            <button type="reset" style="width: 100%; background-color: #d9381e; color: white; border: none; padding: 10px; font-size: 15px; font-weight: bold; border-radius: 4px; cursor: pointer;">Reset</button>
+            <!-- Form Buttons -->
+            <div class="btn-container">
+                <button type="submit" class="btn btn-submit">Submit</button>
+                <button type="reset" class="btn btn-reset">Reset</button>
+            </div>
         </form>
-    </div>
+    </main>
 
 </body>
 </html>
